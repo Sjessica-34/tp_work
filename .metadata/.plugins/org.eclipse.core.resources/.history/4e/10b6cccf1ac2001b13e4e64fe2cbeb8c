@@ -1,0 +1,23 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
+
+public class TestConnexionJdbc {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ResourceBundle bundle=ResourceBundle.getBundle("db");
+		String dburl = bundle.getSting( key:"db.url");
+		String login = bundle.getSting( key:"db.login");
+		String pwd = bundle.getSting( key:"db.password");
+		
+		
+		try(Connection connection = DriverManager.getConnection(dburl, login, pwd)) {
+			System.out.println(connection);
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
+}

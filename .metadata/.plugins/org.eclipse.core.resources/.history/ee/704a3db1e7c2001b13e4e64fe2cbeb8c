@@ -1,0 +1,9 @@
+package fr.diginamic.jdbc.bo;
+
+public class Fournisseur {
+
+	private int id;
+	private String nom;
+	
+	
+}

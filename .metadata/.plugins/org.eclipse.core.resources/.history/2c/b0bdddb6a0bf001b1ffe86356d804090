@@ -1,0 +1,16 @@
+package utils;
+
+public class StringUtils {
+
+	 public boolean  isNullOrEmpty (String str )
+	{
+		 Boolean bool;
+		if (str != null && !str.trim().isEmpty())
+			 bool=true;
+		}
+	 	else {
+	 		bool = false;
+	 	}
+			return bool;
+	    }
+	}

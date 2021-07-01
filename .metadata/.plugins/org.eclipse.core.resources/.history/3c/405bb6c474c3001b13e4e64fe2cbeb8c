@@ -1,0 +1,28 @@
+package fr.diginamic.jdbc.dao;
+
+//requete pour la table fournisseur mariadb
+public class FournisseurDaoJdbc {
+
+	private static String SELECT 
+	private static String INSERT
+	private static String UPDATE 
+	private static String SELECT 
+	private static String SELECT 
+	
+public void	insert () {
+	requete sql
+}
+
+public void	update () {
+	
+}
+	public void delete(){
+		
+	}
+	public List<Fournisseur>selectAll (){
+		return null;
+	}
+public Fournisseur selectbyId (){
+	return null;	
+	}
+}

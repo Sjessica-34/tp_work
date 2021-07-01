@@ -1,0 +1,21 @@
+package fr.diginamic.jdbc.dao;
+
+import java.util.ResourceBundle;
+
+public class ConnectionDB {
+
+	private static final String URL;
+	private static final String USER;
+	private static final String PASSWORD;
+	
+	static {
+		RessourceBundle fichier = ResourceBundle.getBundle("database");
+		
+		URL = fichier.getString("db.url");
+		USER = fichier.getString("db.user");
+		PASSWORD = fichier.getString("db.password");
+		
+		
+	}
+	
+}
