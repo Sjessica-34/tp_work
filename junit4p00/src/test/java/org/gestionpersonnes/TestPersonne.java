@@ -1,19 +1,21 @@
 package org.gestionpersonnes;
 
 import static org.junit.Assert.*;
+
 import org.junit.Before;
 import org.junit.Test;
 
 /**
  * Classe de Test Junit 4 : TestPersonne
- * @author  Christophe Germain
- * @version  1.0
+ *
+ * @author Christophe Germain
+ * @version 1.0
  */
 public class TestPersonne {
     /**
      * Variable Globale d'une instance de Personne
      */
-    private org.gestionpersonnes.Operation testpersonne  = null;
+    private Personne testpersonne = null;
     private final String nom = "GERMAIN";
     private final String prenom = "Christophe";
     private final String adresse = "rue principale";
@@ -28,7 +30,7 @@ public class TestPersonne {
      */
     @Before
     public void setup() {
-        testpersonne = new org.gestionpersonnes.Operation(nom,prenom,adresse,ville,cdpstd);
+        testpersonne = new Personne(nom, prenom, adresse, ville, cdpstd);
     }
 
     /**
@@ -38,6 +40,7 @@ public class TestPersonne {
     public void instancePersonne() {
         assertNotNull(testpersonne);
     }
+
     /**
      * Test 1 : est ce que la personne est instanciée
      * Test 2 : est ce que les getters sont différents de null (?? assert ....??)
@@ -60,18 +63,17 @@ public class TestPersonne {
         /**
          * Personne.class.getSimpleName() = "Personne"
          */
-        String tostring = org.gestionpersonnes.Operation.class.getSimpleName()+" [nom=" + nom + ", prenom=" + prenom + ", adresse=" + adresse + ", ville=" + ville
+        String tostring = org.gestionpersonnes.Personne.class.getSimpleName() + " [nom=" + nom + ", prenom=" + prenom + ", adresse=" + adresse + ", ville=" + ville
                 + ", codepostal=" + cdpstd + "]";
-        assertEquals(tostring,testpersonne.toString());
+        assertEquals(tostring, testpersonne.toString());
     }
 
     @Test
     public void testCdpStd() {
         try {
-            org.gestionpersonnes.Operation.CtrlCodePostal(cdpstd);
+            org.gestionpersonnes.Personne.CtrlCodePostal(cdpstd);
             assertTrue(true); //TEST OK
-        }
-        catch(Exception e) {
+        } catch (Exception e) {
             //assertFalse(true); //TEST KO
             //assertTrue(false); //TEST KO
             fail(); //TEST KO
@@ -80,9 +82,9 @@ public class TestPersonne {
     }
 
     @Test(expected = Exception.class)
-    public void testCdpShort() throws  Exception{
+    public void testCdpShort() throws Exception {
 
-            org.gestionpersonnes.Operation.CtrlCodePostal(cdpshort);
+        org.gestionpersonnes.Personne.CtrlCodePostal(cdpshort);
 
     }
 
@@ -93,10 +95,9 @@ public class TestPersonne {
     @Test
     public void testCdpFalse() {
         try {
-            org.gestionpersonnes.Operation.CtrlCodePostal(cdpfalse);
-        }
-        catch(Exception e) {
-            assertEquals(e.getMessage(),"Il faut saisir uniquement des chiffres");
+            org.gestionpersonnes.Personne.CtrlCodePostal(cdpfalse);
+        } catch (Exception e) {
+            assertEquals(e.getMessage(), "Il faut saisir uniquement des chiffres");
         }
 
     }

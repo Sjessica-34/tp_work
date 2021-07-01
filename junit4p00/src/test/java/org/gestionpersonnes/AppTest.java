@@ -1,6 +1,7 @@
 package org.gestionpersonnes;
 
-import static org.junit.Assert.assertTrue;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
 
